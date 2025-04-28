@@ -28,7 +28,7 @@ export class GestionCitasPage implements OnDestroy {
   }
 
   ionViewWillEnter() {
-    this.citaService.cargarCitas(); // <-- Ya no es async, no necesitas await
+    this.citaService.cargarCitas();
   }
 
   agregarCita(event: { frase: string, autor: string }) {
