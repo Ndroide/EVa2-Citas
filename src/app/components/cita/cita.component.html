@@ -1,0 +1,7 @@
+<ion-card>
+  <ion-card-content>
+    <p>{{ frase }}</p>
+    <p><strong>{{ autor }}</strong></p>
+    <ion-button *ngIf="puedeEliminar" color="danger" (click)="onEliminar()">Eliminar</ion-button>
+  </ion-card-content>
+</ion-card>

@@ -1,0 +1,24 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Inicio</ion-title>
+    <ion-buttons slot="end">
+      <ion-button [routerLink]="['/gestion-citas']">
+        Gestión de Citas
+      </ion-button>
+      <ion-button [routerLink]="['/configuracion']">
+        Configuraciones
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ng-container *ngIf="cita.frase; else noCitas">
+    <app-cita [frase]="cita.frase" [autor]="cita.autor"></app-cita>
+  </ng-container>
+  <ng-template #noCitas>
+    <ion-text color="medium">
+      <p class="ion-padding">No hay citas disponibles. Agrega una nueva desde "Gestión de Citas".</p>
+    </ion-text>
+  </ng-template>
+</ion-content>

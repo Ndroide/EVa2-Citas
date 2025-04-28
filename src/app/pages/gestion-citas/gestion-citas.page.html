@@ -1,0 +1,22 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Gestión de Citas</ion-title>
+    <ion-buttons slot="start">
+      <ion-button [routerLink]="['/inicio']">
+        Inicio
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <app-formulario-cita (nuevaCita)="agregarCita($event)"></app-formulario-cita>
+
+  <app-cita 
+    *ngFor="let c of citas; let i = index" 
+    [frase]="c.frase" 
+    [autor]="c.autor" 
+    [puedeEliminar]="true" 
+    (eliminar)="eliminarCita(i)">
+  </app-cita>
+</ion-content>
